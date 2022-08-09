@@ -55,7 +55,6 @@ namespace API.Controllers
 
 
         [HttpPost("add-photo")]
-
         public async Task<ActionResult<PhotoDto>> Addphoto(IFormFile file)
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
@@ -83,8 +82,8 @@ namespace API.Controllers
             return BadRequest("Problem adding photo");
         }
 
-        [HttpPut("set-main-photo/{photoId}")]
 
+        [HttpPut("set-main-photo/{photoId}")]
         public async Task<ActionResult> SetMainPhoto(int photoId)
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
